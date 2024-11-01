@@ -1,0 +1,244 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+/>
+
+<nav class="bg-white p-4">
+  <div
+    class="container mx-auto flex flex-wrap justify-between items-center shadow-md rounded-md"
+  >
+    <!-- Logo -->
+    <div class="flex items-center">
+      <img [src]="logoPath" alt="mylogo" class="h-20 w-auto" />
+    </div>
+
+    <!-- Search Bar (Hidden on small screens) -->
+    <div
+      class="relative w-full lg:w-96 md:w-1/4 mt-2 md:mt-0 hidden md:block sm:w-1/2 sm:block"
+    >
+      <input
+        type="text"
+        placeholder="Search"
+        class="w-full bg-gray-100 text-black rounded-full px-4 py-[6px] mb-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <button
+        class="absolute right-3 top-1 text-gray-400 hover:text-black focus:outline-none"
+      >
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+
+    <!-- Links (Right, hidden on small screens) -->
+    <div class="hidden md:flex space-x-4 mt-3 md:mt-0">
+      <ul class="flex space-x-10">
+        <li>
+          <a
+            routerLinkActive="activebutton"
+            ariaCurrentWhenActive="page"
+            routerLink="Home"
+            class="text-black hover:bg-gray-200 p-2 no-underline"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            routerLinkActive="activebutton"
+            ariaCurrentWhenActive="page"
+            routerLink="Categories"
+            class="text-black hover:text-gray-400 no-underline hover:bg-gray-200 p-2"
+            >Categories</a
+          >
+        </li>
+        <li>
+          <a
+            routerLinkActive="activebutton"
+            ariaCurrentWhenActive="page"
+            routerLink="about"
+            class="text-black hover:text-gray-400 no-underline hover:bg-gray-200 p-2"
+            >About</a
+          >
+        </li>
+        <!-- Added View Cart link -->
+        <li>
+          <a
+            routerLinkActive="activebutton"
+            ariaCurrentWhenActive="page"
+            routerLink="/cart"
+            class="text-black hover:text-gray-400 no-underline hover:bg-gray-200 p-2"
+          >
+            Cart</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- Cart Icon & Toggle Button for small screens -->
+    <div class="flex items-center md:hidden space-x-4">
+      <i routerLink="cart" class="fa-solid fa-cart-shopping text-blue-600 cursor-pointer"></i>
+      <button
+        class="block text-black focus:outline-none"
+        ngClass="{ block: isMenuOpen, hidden: !isMenuOpen }"
+        (click)="toggleMenu()"
+      >
+        ☰
+      </button>
+    </div>
+  </div>
+
+  <!-- Links that appear when the menu is toggled -->
+  <nav *ngIf="isMenuOpen" class="bg-white p-4">
+    <ul>
+      <li>
+        <a
+          routerLinkActive="activebutton"
+          ariaCurrentWhenActive="page"
+          routerLink="Home"
+          class="block p-2 text-black no-underline hover:bg-gray-50"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          routerLinkActive="activebutton"
+          ariaCurrentWhenActive="page"
+          routerLink="categories"
+          class="block p-2 text-black no-underline hover:bg-gray-50"
+          >Categories</a
+        >
+      </li>
+      <li>
+        <a
+          routerLinkActive="activebutton"
+          ariaCurrentWhenActive="page"
+          routerLink="about"
+          class="block p-2 text-black no-underline hover:bg-gray-50"
+          >About</a
+        >
+      </li>
+      <li>
+        <a
+          routerLinkActive="activebutton"
+          ariaCurrentWhenActive="page"
+          routerLink="contact"
+          class="block p-2 text-black no-underline hover:bg-gray-50"
+          >Contact</a
+        >
+      </li>
+      
+      <li>
+        <a
+          routerLinkActive="activebutton"
+          ariaCurrentWhenActive="page"
+          routerLink="/cart"
+          class="block p-2 text-black no-underline hover:bg-gray-50"
+          >View Cart</a
+        >
+      </li>
+    </ul>
+  </nav>
+</nav>
+
+<router-outlet></router-outlet>
+
+<!-- start footer  -->
+
+<footer class="bg-gray-900 text-white py-8">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Logo and About -->
+      <div class="col-span-1">
+        <a href="#">
+          <img [src]="pathLogo" alt="Logo" class="h-12 w-14 rounded-full" />
+        </a>
+        <p class="text-gray-400 text-sm mt-3">
+          Your company description goes here. This is a brief description about
+          your business.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-span-1">
+        <h3 class="text-lg font-semibold mb-4 ml-7">Quick Links</h3>
+        <ul class="space-y-2">
+          <li>
+            <a href="#" class="text-gray-400 hover:text-white no-underline"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="about"
+              class="text-gray-400 hover:text-white no-underline"
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="services"
+              class="text-gray-400 hover:text-white no-underline"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="contact"
+              class="text-gray-400 hover:text-white no-underline"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="col-span-1">
+        <h3 class="text-lg font-semibold mb-4 ml-7">Services</h3>
+        <ul class="space-y-2">
+          <li>
+            <a href="#" class="text-gray-400 hover:text-white no-underline"
+              >Web Development</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-gray-400 hover:text-white no-underline"
+              >E-commerce</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-gray-400 hover:text-white no-underline"
+              >SEO Services</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-gray-400 hover:text-white no-underline"
+              >Marketing</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social Media -->
+      <div class="col-span-1">
+        <h3 class="text-lg font-semibold mb-4 ml-4">Follow Us</h3>
+        <div class="flex flex-col space-y-4">
+          <a href="#" class="text-gray-400 hover:text-white no-underline">
+            <i class="fab fa-facebook-f"></i> Facebook
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white no-underline">
+            <i class="fab fa-twitter"></i> Twitter
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white no-underline">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <hr class="my-6 border-gray-700" />
+
+    <!-- Copyright Section -->
+    <div class="text-center text-gray-500 text-sm">
+      © 2024 Your Company. All Rights Reserved.
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,46 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Checkout</h2>
+
+  <form (ngSubmit)="submitOrder()" class="checkout-form">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="user.name" name="name" required />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" [(ngModel)]="user.email" name="email" required />
+    </div>
+    <div class="mb-3">
+      <label for="address" class="form-label">Address</label>
+      <textarea class="form-control" id="address" [(ngModel)]="user.address" name="address" required></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone</label>
+      <input type="tel" class="form-control" id="phone" [(ngModel)]="user.phone" name="phone" required />
+    </div>
+
+    <h4 class="text-center">Order Summary</h4>
+    <div class="order-summary">
+      <div *ngFor="let item of cartItems" class="order-item">
+        <p>{{ item.name }} - <span class="price">${{ item.price.toFixed(2) }}</span></p>
+      </div>
+    </div>
+    <h5 class="text-center">Total: <span class="total-price">${{ total.toFixed(2) }}</span></h5>
+
+    <!-- <button type="submit" class="btn btn-success w-80 mb-20 mt-3">Submit Order</button> -->
+    <div class="mt-10 flex w-full items-center justify-center">
+      <button
+        type="submit"
+
+        class="mb-10 rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+      >
+        Checkout
+      </button>
+    </div>
+  </form>
+</div>
+
+
+
+
+

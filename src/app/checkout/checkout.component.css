@@ -1,0 +1,42 @@
+.checkout-form {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+  font-weight: bold;
+  color: #495057;
+}
+
+.order-summary {
+  margin: 20px 0;
+}
+
+.order-item {
+  border-bottom: 1px solid #e9ecef;
+  padding: 10px 0;
+}
+
+.price {
+  color: #28a745; /*  success color */
+  font-weight: bold;
+}
+
+.total-price {
+  color: #dc3545; /*  faild color */
+  font-weight: bold;
+}
+
+.btn {
+  transition: background-color 0.3s ease;
+}
+
+.btn-success {
+  background-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}

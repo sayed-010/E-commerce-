@@ -1,0 +1,198 @@
+
+
+
+    <div class="bg-white">
+      <div
+        class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-max lg:px-8 drop-shadow-2xl"
+      >
+        <!-- Page Heading -->
+        <h1
+          class="text-5xl font-bold tracking-tight text-center text-sky-600 pb-7"
+        >
+          Category
+        </h1>
+
+
+
+
+
+        <div
+          class="mt-8 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-1 lg:grid-cols-1 xl:gap-x-8 justify-center"
+        >
+          <!-- Men's Category -->
+          <div class="group relative">
+            <!-- Image Container -->
+            <div
+              class="aspect-h-1 aspect-w-1   w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-80"
+            >
+              <!-- Image with Blur Effect on Hover -->
+
+              <img [src]="MenClothing" alt="mylogo"
+                class="h-full w-full object-cover object-center transition duration-500 ease-in-out group-hover:blur-sm group-hover:opacity-75 lg:h-screen lg:w-screen"
+              />
+              <!-- Hover Text (Hidden by Default) -->
+              <div
+
+                class="absolute inset-0 items-center justify-center hidden transition-all duration-500 ease-in-out group-hover:flex"
+              >
+                <div class="text-white text-center space-y-2">
+
+                  <a
+                  routerLinkActive="activebutton"
+                  ariaCurrentWhenActive="page"
+                  routerLink="/Categories/MenShirts"
+                    class="block text-lg font-bold no-underline hover:text-gray-300"
+                  >
+                    Shirts
+                  </a>
+                  <a
+                  routerLinkActive="Activebutton"
+                  ariaCurrentWhenActive="page"
+                  routerLink="/Categories/MenTshirt"
+                    class="block text-lg font-bold no-underline hover:text-gray-300"
+                    >T-shirts</a
+                  >
+                  <a
+                  routerLinkActive="Activebutton"
+                  ariaCurrentWhenActive="page"
+                  routerLink="/Categories/MenPants"
+                    class="block text-lg font-bold no-underline hover:text-gray-300"
+                    >Pants</a
+                  >
+                  <a
+                  routerLinkActive="Activebutton"
+                  ariaCurrentWhenActive="page"
+                  routerLink="/Categories/MenShoes"
+                    class="block text-lg font-bold no-underline hover:text-gray-300"
+                    >Shoes</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Category Title -->
+            <div class="mt-4 text-center">
+              <h2 class="text-2xl font-bold text-gray-700 pt-3">Men</h2>
+            </div>
+          </div>
+
+          <!-- Women's Category -->
+          <div class="group relative">
+            <!-- Image Container -->
+            <div
+              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-80"
+            >
+              <!-- Image with Blur Effect on Hover -->
+              <img [src]="WemenClothing" alt="Women's Clothing"
+                class="h-full w-full object-cover object-center transition duration-500 ease-in-out group-hover:blur-sm group-hover:opacity-75 lg:h-screen lg:w-screen"
+              />
+
+              <!-- Hover Text (Hidden by Default) -->
+              <div
+                class="absolute inset-0 items-center justify-center hidden transition-all duration-500 ease-in-out group-hover:flex"
+              >
+                <div class="text-white  text-center space-y-2">
+                  <a
+                  routerLinkActive="Activebutton"
+                  ariaCurrentWhenActive="page"
+                  routerLink="/Categories/WomenShirts"
+                    class="block text-lg font-bold no-underline hover:text-gray-300"
+                    >Shirts</a
+                  >
+                  <a
+                  routerLinkActive="Activebutton"
+                  ariaCurrentWhenActive="page"
+                  routerLink="/Categories/WomenTshirts"
+                    class="block text-lg font-bold no-underline hover:text-gray-300"
+                    >T-shirts</a
+                  >
+                  <a
+                  routerLinkActive="Activebutton"
+                  ariaCurrentWhenActive="page"
+                  routerLink="/Categories/WomenPants"
+                    class="block text-lg font-bold no-underline hover:text-gray-300"
+                    >Pants</a
+                  >
+                  <a
+                  routerLinkActive="Activebutton"
+                  ariaCurrentWhenActive="page"
+                  routerLink="/Categories/WomenShoes"
+                    class="block text-lg font-bold no-underline hover:text-gray-300"
+                    >Shoes</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Category Title -->
+            <div class="mt-4 text-center">
+              <h2 class="text-2xl font-bold text-gray-700 bt-3">Women</h2>
+            </div>
+          </div>
+
+          <!-- Kids' Category -->
+          <div class="group relative">
+
+            <!-- Image Container -->
+            <div
+              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-80"
+            >
+              <!-- Image with Blur Effect on Hover -->
+              <img
+                src="assets/images/kids/kid-1.jpeg"
+                alt="Kids' Clothing"
+                class="h-full w-full object-cover object-center transition duration-500 ease-in-out group-hover:blur-sm group-hover:opacity-75 lg:h-screen lg:w-screen"
+              />
+              <!-- Hover Text (Hidden by Default) -->
+              <div
+                class="absolute inset-0 items-center justify-center hidden transition-all duration-500 ease-in-out group-hover:flex"
+              >
+                <div class="text-white text-center space-y-2">
+                  <a
+                  routerLinkActive="Activebutton"
+                  ariaCurrentWhenActive="page"
+                  routerLink="/Categories/KidsShirts"
+                    class="block text-lg font-bold no-underline hover:text-gray-300"
+                    >Shirts</a
+                  >
+                  <a
+                  routerLinkActive="Activebutton"
+                  ariaCurrentWhenActive="page"
+                  routerLink="/Categories/KidsTshirts"
+                    class="block text-lg font-bold no-underline hover:text-gray-300"
+                    >T-shirts</a
+                  >
+                  <a
+                  routerLinkActive="Activebutton"
+                  ariaCurrentWhenActive="page"
+                  routerLink="/Categories/KidsPants"
+                    class="block text-lg font-bold no-underline hover:text-gray-300"
+                    >Pants</a
+                  >
+                  <a
+                  routerLinkActive="Activebutton"
+                  ariaCurrentWhenActive="page"
+                  routerLink="/Categories/KidsShoes"
+                    class="block text-lg font-bold no-underline hover:text-gray-300"
+                    >Shoes</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Category Title -->
+            <div class="mt-4 text-center">
+              <h2 class="text-2xl font-bold text-gray-700 py-4">Kids</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+

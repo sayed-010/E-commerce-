@@ -1,0 +1,82 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Visa Application Form</h2>
+
+  <form [formGroup]="visaForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="fullName" class="form-label">Full Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="fullName"
+        formControlName="fullName"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        formControlName="email"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="visaNumber" class="form-label">Visa Number</label>
+      <input
+        type="text"
+        class="form-control"
+        id="visaNumber"
+        formControlName="visaNumber"
+        required
+      />
+      <small
+        *ngIf="
+          visaForm.get('visaNumber')?.invalid &&
+          visaForm.get('visaNumber')?.touched
+        "
+        class="text-danger"
+      >
+        Visa number must be exactly 15 characters long.
+      </small>
+    </div>
+    <div class="mb-3">
+      <label for="cvv" class="form-label">CVV</label>
+      <input
+        type="text"
+        class="form-control"
+        id="cvv"
+        formControlName="cvv"
+        required
+      />
+      <small
+        *ngIf="visaForm.get('cvv')?.invalid && visaForm.get('cvv')?.touched"
+        class="text-danger"
+      >
+        CVV must be exactly 3 numeric characters.
+      </small>
+    </div>
+    <div class="mb-3">
+      <label for="validationDate" class="form-label"
+        >Visa Validation Date</label
+      >
+      <input
+        type="date"
+        class="form-control"
+        id="validationDate"
+        formControlName="validationDate"
+        required
+      />
+    </div>
+
+    <div class="mt-10 flex w-full items-center justify-center">
+      <button
+        type="submit"
+        class="mb-10 rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+      >
+        save
+      </button>
+    </div>
+  </form>
+</div>

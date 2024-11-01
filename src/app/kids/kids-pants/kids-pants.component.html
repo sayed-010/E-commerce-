@@ -1,0 +1,172 @@
+
+<!-- Main Content -->
+<main class="container mx-auto my-8 drop-shadow-2xl">
+  <div class="bg-white mb-16">
+    <div
+      class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-max lg:px-8 drop-shadow-2xl"
+    >
+      <div
+        class="mt-8 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-1 lg:grid-cols-1 xl:gap-x-8 justify-center"
+      >
+        <div class="group relative">
+          <div
+            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-80"
+          >
+            <!-- Image with Blur Effect on Hover -->
+            <img
+              src="assets/images/kids/kids-pants/kid-pants-8.jpeg"
+              alt="kids's Clothing"
+              class="h-full w-full object-cover object-center transition duration-500 ease-in-out group-hover:blur-sm group-hover:opacity-75 lg:h-screen lg:w-screen"
+            />
+            <!-- Hover Text (Hidden by Default) -->
+            <div
+              class="absolute inset-0 items-center justify-center hidden transition-all duration-500 ease-in-out group-hover:flex"
+            >
+              <div class="text-white text-center space-y-2">
+                <!-- Page Heading -->
+                <h1
+                  class="text-5xl font-bold tracking-tight text-center text-sky-600 pb-7"
+                >
+                  Kids Pants
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="flex flex-col lg:flex-row">
+    <!-- Filter Button for Small Screens -->
+    <button
+      class="w-full sm:w-auto lg:hidden bg-blue-500 text-white hover:bg-slate-500 px-4 py-2 rounded mb-4"
+      (click)="showFilter = !showFilter"
+    >
+      Filter
+    </button>
+
+    <aside
+      class="w-full lg:w-1/4 sm:w-1/4 p-4 bg-white shadow-md mb-4 lg:mb-0 lg:mr-4"
+      [ngClass]="{ hidden: !showFilter && isSmallScreen }"
+    >
+      <h2 class="text-xl font-semibold mb-4">Prices</h2>
+      <div class="bg-white p-6 rounded-lg">
+        <form class="space-y-4">
+          <label class="flex flex-wrap items-center space-x-3" *ngFor="let price of priceRanges">
+            <input
+              type="checkbox"
+              class="form-checkbox h-5 w-5 text-green-500 focus:ring-0 border-gray-300 rounded-full"
+              (change)="togglePrice(price)"
+            />
+            <span class="text-gray-700">{{ price.label }}</span>
+          </label>
+        </form>
+      </div>
+
+      <h2 class="text-xl font-semibold mb-4">Colors</h2>
+      <div class="flex flex-wrap space-x-2 mb-6">
+        <button
+          *ngFor="let color of colors"
+          (click)="toggleColor(color.name)"
+          [ngStyle]="{
+            'background-color': color.hex,
+            'border-color': selectedColors.includes(color.name) ? 'black' : 'transparent'
+          }"
+          class="w-6 h-6 rounded-full border-2 text-transparent focus:outline-none"
+        >
+          .
+        </button>
+      </div>
+
+      <h2 class="text-xl font-semibold mb-4">Sizes</h2>
+      <div class="bg-white p-6 rounded-lg">
+        <form class="space-y-4">
+          <label class="flex flex-wrap items-center space-x-3" *ngFor="let size of sizes">
+            <input
+              type="checkbox"
+              class="form-checkbox h-5 w-5 text-green-500 focus:ring-0 border-gray-300 rounded-full"
+              (change)="toggleSize(size)"
+            />
+            <span class="text-gray-700">{{ size }}</span>
+          </label>
+        </form>
+      </div>
+
+      <h2 class="text-xl font-semibold mb-4">Most Trending</h2>
+      <div class="mb-6 rounded-lg bg-gray-100 py-2 px-2">
+        <a href="">
+          <img
+            src="assets/images/kids/kids-pants/kid-pants-5.jpeg"
+            alt="Trending"
+            class="w-full mb-4 rounded-lg h-48 object-cover"
+          />
+        </a>
+        <p class="text-gray-600">Jersey Graphic Tee</p>
+        <p class="text-red-500 font-bold">$50</p>
+      </div>
+
+      <div class="bg-gray-300 text-white text-center py-4 px-2 rounded-lg">
+        <a href="">
+          <img
+            src="assets/images/kids/kids-pants/kid-pants-4.jpeg"
+            alt="Trending"
+            class="w-full mb-4 rounded-lg h-48 object-cover"
+          />
+        </a>
+        <p>Up to 70% off!</p>
+        <button class="bg-white text-red-500 px-4 py-2 rounded-lg">Shop Now</button>
+      </div>
+    </aside>
+
+    <div class="w-full lg:w-3/4 sm:w-3/4 p-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div *ngFor="let product of filteredProducts" class="bg-white shadow-md rounded-lg overflow-hidden">
+          <a (click)="viewDetails(product.id)">
+            <img
+              [src]="product.imageUrl"
+              alt="{{ product.name }}"
+              class="w-full h-48 object-cover"
+            />
+          </a>
+          <div class="p-4">
+            <h3 class="text-lg font-bold">{{ product.name }}</h3>
+            <p class="text-gray-700">${{ product.price }}</p>
+            <button
+            routerLink="cart/:id"
+             class="w-full sm:w-auto mt-4 bg-blue-500 text-white hover:bg-slate-500 px-4 py-2 rounded grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+      <!-- Pagination -->
+      <div class="flex flex-wrap justify-center mt-8"> <!--****************editeddddddd*******flex-wrap************-->
+        <button
+          class="px-4 py-2 mx-2 mb-2 bg-blue-500 text-white rounded-l-lg hover:bg-slate-500"
+        ><!--****************editeddddddd**********mb-2*********-->
+          1
+        </button>
+        <button
+          class="px-4 py-2 mx-2 mb-2 bg-blue-500 text-white rounded-lg hover:bg-slate-500"
+        >
+          2
+        </button>
+        <button
+          class="px-4 py-2 mx-2 mb-2 bg-blue-500 text-white rounded-lg hover:bg-slate-500"
+        >
+          3
+        </button>
+        <button
+          class="px-4 py-2 mx-2 mb-2 bg-blue-500 text-white rounded-r-lg hover:bg-slate-500"
+        >
+          4
+        </button>
+      </div>
+</main>
